@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008181436) do
+ActiveRecord::Schema.define(version: 20141008181512) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,66 @@ ActiveRecord::Schema.define(version: 20141008181436) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.boolean  "flag_status"
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "orders", force: true do |t|
+    t.boolean  "processed"
+    t.boolean  "shipped"
+    t.string   "tracking"
+    t.integer  "user_id"
+    t.string   "to_address"
+    t.string   "billing_address"
+    t.float    "tax_shipping_cost"
+    t.boolean  "shopping_cart"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
+  create_table "ratings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "value"
+    t.text     "review"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+
+  create_table "store_items", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "price"
+    t.integer  "order_id"
+    t.integer  "rating_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_items", ["order_id"], name: "index_store_items_on_order_id"
+  add_index "store_items", ["rating_id"], name: "index_store_items_on_rating_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -60,6 +120,9 @@ ActiveRecord::Schema.define(version: 20141008181436) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.boolean  "membership"
+    t.boolean  "newsletter"
+    t.boolean  "flagged"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
