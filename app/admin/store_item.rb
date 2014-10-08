@@ -1,4 +1,5 @@
 ActiveAdmin.register StoreItem do
+  permit_params :name, :description, :price
 
 
   # See permitted parameters documentation:
