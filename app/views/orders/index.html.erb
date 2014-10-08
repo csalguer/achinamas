@@ -1,39 +1,48 @@
-<h1>Listing orders</h1>
-
-<table>
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Order %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Processed</th>
-      <th>Shipped</th>
-      <th>Tracking</th>
-      <th>User</th>
-      <th>To address</th>
-      <th>Billing address</th>
-      <th>Tax shipping cost</th>
-      <th>Shopping cart</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:processed) %></th>
+      <th><%= model_class.human_attribute_name(:shipped) %></th>
+      <th><%= model_class.human_attribute_name(:tracking) %></th>
+      <th><%= model_class.human_attribute_name(:to_address) %></th>
+      <th><%= model_class.human_attribute_name(:billing_address) %></th>
+      <th><%= model_class.human_attribute_name(:tax_shipping_cost) %></th>
+      <th><%= model_class.human_attribute_name(:shopping_cart) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td><%= order.id %></td>
         <td><%= order.processed %></td>
         <td><%= order.shipped %></td>
         <td><%= order.tracking %></td>
-        <td><%= order.user %></td>
         <td><%= order.to_address %></td>
         <td><%= order.billing_address %></td>
         <td><%= order.tax_shipping_cost %></td>
         <td><%= order.shopping_cart %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l order.created_at, format: :long %></td>
+        <td>
+          <%= link_to order_path(order), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to order_path(order), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_order_path,
+            :class => 'btn btn-primary' %>

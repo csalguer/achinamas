@@ -1,18 +1,52 @@
-<%= simple_form_for(@order) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :processed %>
-    <%= f.input :shipped %>
-    <%= f.input :tracking %>
-    <%= f.association :user %>
-    <%= f.input :to_address %>
-    <%= f.input :billing_address %>
-    <%= f.input :tax_shipping_cost %>
-    <%= f.input :shopping_cart %>
+<%= form_for @order, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :processed, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :processed, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipped, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :shipped, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tracking, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tracking, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :to_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :to_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :billing_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tax_shipping_cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tax_shipping_cost, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shopping_cart, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :shopping_cart, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  orders_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

@@ -1,44 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Order %></h1>
+</div>
 
-<p>
-  <strong>Processed:</strong>
-  <%= @order.processed %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:processed) %></dt>
+      <dd><pre class="prettyprint"><%= @order.processed %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipped) %></dt>
+      <dd><pre class="prettyprint"><%= @order.shipped %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tracking) %></dt>
+      <dd><pre class="prettyprint"><%= @order.tracking %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:to_address) %></dt>
+      <dd><pre class="prettyprint"><%= @order.to_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_address) %></dt>
+      <dd><pre class="prettyprint"><%= @order.billing_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tax_shipping_cost) %></dt>
+      <dd><pre class="prettyprint"><%= @order.tax_shipping_cost %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shopping_cart) %></dt>
+      <dd><pre class="prettyprint"><%= @order.shopping_cart %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Shipped:</strong>
-  <%= @order.shipped %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              orders_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_order_path(@order), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              order_path(@order),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Tracking:</strong>
-  <%= @order.tracking %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
-
-<p>
-  <strong>To address:</strong>
-  <%= @order.to_address %>
-</p>
-
-<p>
-  <strong>Billing address:</strong>
-  <%= @order.billing_address %>
-</p>
-
-<p>
-  <strong>Tax shipping cost:</strong>
-  <%= @order.tax_shipping_cost %>
-</p>
-
-<p>
-  <strong>Shopping cart:</strong>
-  <%= @order.shopping_cart %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
