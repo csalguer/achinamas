@@ -1,4 +1,5 @@
 ActiveAdmin.register Rating do
+  permit_params :value, :review
 
 
   # See permitted parameters documentation:
