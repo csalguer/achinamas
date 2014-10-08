@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = StoreItem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => StoreItem %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @store_item.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @store_item.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @store_item.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:price) %></dt>
+      <dd><pre class="prettyprint"><%= @store_item.price %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @store_item.description %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              store_items_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_store_item_path(@store_item), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              store_item_path(@store_item),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @store_item.price %>
-</p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @store_item.order %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @store_item.rating %>
-</p>
-
-<%= link_to 'Edit', edit_store_item_path(@store_item) %> |
-<%= link_to 'Back', store_items_path %>
