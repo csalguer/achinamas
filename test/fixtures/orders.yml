@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  processed: false
+  shipped: false
+  tracking: MyString
+  user_id: 
+  to_address: MyString
+  billing_address: MyString
+  tax_shipping_cost: 1.5
+  shopping_cart: false
+
+two:
+  processed: false
+  shipped: false
+  tracking: MyString
+  user_id: 
+  to_address: MyString
+  billing_address: MyString
+  tax_shipping_cost: 1.5
+  shopping_cart: false
