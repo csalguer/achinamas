@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Processed:</strong>
+  <%= @order.processed %>
+</p>
+
+<p>
+  <strong>Shipped:</strong>
+  <%= @order.shipped %>
+</p>
+
+<p>
+  <strong>Tracking:</strong>
+  <%= @order.tracking %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<p>
+  <strong>To address:</strong>
+  <%= @order.to_address %>
+</p>
+
+<p>
+  <strong>Billing address:</strong>
+  <%= @order.billing_address %>
+</p>
+
+<p>
+  <strong>Tax shipping cost:</strong>
+  <%= @order.tax_shipping_cost %>
+</p>
+
+<p>
+  <strong>Shopping cart:</strong>
+  <%= @order.shopping_cart %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
