@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :store_items
+
   resources :orders
 
   resources :ratings
