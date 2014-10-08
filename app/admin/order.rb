@@ -1,4 +1,5 @@
 ActiveAdmin.register Order do
+  permit_params :processed, :shipped, :tracking, :to_address, :billing_address, :tax_shipping_cost, :shopping_cart
 
 
   # See permitted parameters documentation:
