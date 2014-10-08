@@ -1,4 +1,5 @@
 ActiveAdmin.register Comment do
+  permit_params :content, :flag_status
 
 
   # See permitted parameters documentation:
