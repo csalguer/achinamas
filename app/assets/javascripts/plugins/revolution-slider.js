@@ -12,7 +12,8 @@ var RevolutionSlider = function () {
 	                startwidth:1170,
 	                startheight:500,
 	                hideThumbs:10,
-					navigationStyle:"preview4"
+					navigationStyle:"preview4",
+	                navigationArrows:"none"
 	            });
 	        });
         },
@@ -32,6 +33,7 @@ var RevolutionSlider = function () {
 	                hideCaptionAtLimit: "",
 	                dottedOverlay:"twoxtwo",
 	                navigationStyle:"preview4",
+	                navigationArrows:"none",  
 	                fullScreenOffsetContainer: ".header"
 	            });
 	        });

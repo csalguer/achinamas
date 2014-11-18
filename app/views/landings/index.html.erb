@@ -267,3 +267,18 @@
     </div><!--/container-->		
 <!-- End Content Part -->
 </div><!--/wrapper-->
+
+<%= javascript_include_tag 'plugins/revolution-slider/jquery.themepunch.tools.min.js' %>
+<%= javascript_include_tag 'plugins/revolution-slider/jquery.themepunch.revolution.min.js' %>
+<!-- JS Customization -->
+<%= javascript_include_tag 'custom.js' %>
+<!-- JS Page Level: MAY HAVE TO GO INTO SPECIFIC VIEWS NOT GLOBAL SETTINGS-->
+<%= javascript_include_tag 'app.js' %>
+<%= javascript_include_tag 'plugins/revolution-slider.js' %>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        //OwlCarousel.initOwlCarousel();        
+        RevolutionSlider.initRSfullWidth();
+    });
+</script>
