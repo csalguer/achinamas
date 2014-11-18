@@ -1,3 +1,6 @@
+<!--=== Wrapper ===-->
+<div class="wrapper">
+
 <!--=== Slider ===-->
     <div class="tp-banner-container">
         <div class="tp-banner">
@@ -6,8 +9,6 @@
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
                     <!-- MAIN IMAGE -->
                     <%= image_tag "sliders/tree.jpg", :alt => "darkblurbg", :data => { :bgfit => "cover", :bgposition => "left top", :bgrepeat => "no-repeat" }%>
-                    <!-- <img src="assets/img/sliders/1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
- -->
                     <div class="tp-caption revolution-ch1 sft start"
                         data-x="center"
                         data-hoffset="0"
@@ -60,8 +61,8 @@
             <div class="tp-bannertimer tp-bottom"></div>            
         </div>
     </div>
-    <!--=== End Slider ===-->
-    <!--=== Content Part ===-->
+<!--=== End Slider ===-->
+<!--=== Content Part ===-->
     <div class="container content">	
         <div class="clearfix margin-bottom-30"></div>
         <div class="shadow-wrapper">
@@ -111,14 +112,13 @@
     	<div class="row margin-bottom-40">
         	<!-- Welcome Block -->
     		<div class="col-md-8 md-margin-bottom-40">
-    			<div class="headline"><h2>Welcome To Unify</h2></div>
+    			<div class="headline"><h2>Welcome To AChinamas</h2></div>
                 <div class="row">
                     <div class="col-sm-4">
                     	<%= image_tag "new/img15.jpg", :class => "img-responsive margin-bottom-20" %>
-                        <!-- <img class="img-responsive margin-bottom-20" src="assets/img/new/img15.jpg" alt="" /> -->
                     </div>
                     <div class="col-sm-8">
-                        <p>Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+                        <p>Achinamas is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
                         <ul class="list-unstyled margin-bottom-20">
                             <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida</li>
                             <li><i class="fa fa-check color-green"></i> Corporate and Creative</li>
@@ -139,25 +139,27 @@
                 <div class="headline"><h3>Recent Entries</h3></div>
                 <dl class="dl-horizontal">
                 	<dt><%= link_to (image_tag "sliders/elastislide/6.jpg"), "#" %></dt>
-                    <!-- <dt><a href="#"><img alt="" src="assets/img/sliders/elastislide/6.jpg"></a></dt> -->
                     <dd>
                         <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
                     </dd>
                 </dl>
-                <!-- <dl class="dl-horizontal">
-                    <dt><a href="#"><img alt="" src="assets/img/sliders/elastislide/10.jpg"></a></dt>
+                <dl class="dl-horizontal">
+                    <dt><%= link_to (image_tag "sliders/elastislide/10.jpg"), "#" %></dt>
                     <dd>
                         <p><a href="#">Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit.</a></p> 
                     </dd>
                 </dl>
                 <dl class="dl-horizontal">
-                    <dt><a href="#"><img alt="" src="assets/img/sliders/elastislide/11.jpg"></a></dt>
+                    <dt><%= link_to (image_tag "sliders/elastislide/11.jpg"), "#" %></dt>
                     <dd>
                         <p><a href="#">It works on all major web browsers, tablets and lorem sequat ipsum dolor.</a></p> 
                     </dd>
-                </dl> -->
-            </div>
+                </dl>
+            </div> 
+            <!-- End of Posts -->
+
     	</div><!--/row-->	
     	<!-- End Info Blokcs -->
     </div><!--/container-->		
-    <!-- End Content Part -->
+<!-- End Content Part -->
+</div><!--/wrapper-->

@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-migrate-min
 //= require turbolinks
 //= require bootstrap
-
+//= require app
+//= require plugins/jquery/jquery.min
+//= require plugins/jquery/jquery-migrate.min
+//= require plugins/revolution-slider
 //= require_tree .
