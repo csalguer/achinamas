@@ -29,3 +29,8 @@ Rails.application.config.assets.precompile += %w( plugins/revolution-slider.js )
 Rails.application.config.assets.precompile += %w( plugins/line-icons/line-icons.css ) 
 Rails.application.config.assets.precompile += %w( plugins/font-awesome/font-awesome.css ) 
 
+#Added when trying to get login page to work
+Rails.application.config.assets.precompile += %w( pages/page_log_reg_v2.css ) 
+Rails.application.config.assets.precompile += %w( plugins/countdown/jquery.countdown.js ) 
+Rails.application.config.assets.precompile += %w( plugins/backstretch/jquery.backstretch.min.js )
+
