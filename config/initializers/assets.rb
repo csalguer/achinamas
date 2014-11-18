@@ -25,3 +25,7 @@ Rails.application.config.assets.precompile += %w( plugins/revolution-slider/jque
 Rails.application.config.assets.precompile += %w( plugins/bootstrap/js/bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( plugins/back-to-top.js )
 Rails.application.config.assets.precompile += %w( plugins/revolution-slider.js )
+#Added when trying to get icons to work
+Rails.application.config.assets.precompile += %w( plugins/line-icons/line-icons.css ) 
+Rails.application.config.assets.precompile += %w( plugins/font-awesome/font-awesome.css ) 
+

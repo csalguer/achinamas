@@ -2,17 +2,28 @@
 <html>
 <head>
  	<title>Achinamas</title>
+ 	<meta charset="utf-8">
+
+ 	<!-- Favicon -->
  	<%= favicon_link_tag 'favicon.ico' %>
+
   	<!-- CSS Global Compulsory-->
   	<%= stylesheet_link_tag 'style.css'%>
   	<%= stylesheet_link_tag 'theme-colors/default.css' %>
+
    	<!-- CSS Implementing Plugins --> 
    	<%= stylesheet_link_tag 'plugins/revolution-slider/settings.css', media: 'screen' %>
    	<!--[if lt IE 9]><%= stylesheet_link_tag 'plugins/revolution-slider/settings-ie8.css', media: 'screen' %><![endif]-->
+   	<%= stylesheet_link_tag 'plugins/line-icons/line-icons.css'%>
+   	<%= stylesheet_link_tag 'plugins/font-awesome/font-awesome.css'%>
 
   	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
+  	
+  	<!-- Extra Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="">
+    <meta name="author" content="">
 </head>
 
 <body>
