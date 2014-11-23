@@ -23,7 +23,8 @@ end
 end
 
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  #Deleted in unifying process
+  # devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
