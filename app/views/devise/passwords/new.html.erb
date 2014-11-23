@@ -1,15 +1,50 @@
-<h2>Forgot your password?</h2>
+<%= stylesheet_link_tag 'pages/page_log_reg_v2.css' %>
+<!--=== Content Part ===-->    
+<div class="container">
+    <!--Reg Block-->
+    <div class="reg-block">
+    	<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    	  <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+        <div class="reg-block-header">
+            <h2>Forgot your password? </h2>
+        </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-  </div>
+        <div class="input-group margin-bottom-20">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <%= f.input :email, required: true, autofocus: true, class: "form-control", placeholder: 'Email' %>
+        </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
+                                
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+            	 <%= f.button :submit, "Send me reset password instructions", class: "btn-u btn-block" %>             
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+        		<%= render "devise/shared/links" %>
+        	</div>
+        </div>
+    </div>
+    <!--End Reg Block-->
+    <% end %>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+<%= javascript_include_tag 'plugins/countdown/jquery.countdown.js' %>
+<%= javascript_include_tag 'plugins/backstretch/jquery.backstretch.min.js' %>
 
-<%= render "devise/shared/links" %>
+<script type="text/javascript">
+    $.backstretch([
+      "<%= image_path 'bg/5.jpg'%>",
+      "<%= image_path 'bg/4.jpg'%>",
+      ], {
+        fade: 1000,
+        duration: 7000
+    });
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();      
+    });
+</script>
