@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'landings/index'
 
+  get    "about"    =>  "landings#about"
+  get    "privacy"  =>  "landings#privacy"
+  get    "terms"    =>  "landings#terms"
+
+
   resources :store_items
 
   resources :orders
@@ -14,13 +19,17 @@ Rails.application.routes.draw do
   end
 end
 
-
-  resources :articles do
-  #->Prelang (voting/acts_as_votable)
-  member do
-    get "vote"
-  end
+concern :paginatable do
+  get '(page/:page)', :action => :index, :on => :collection, :as => ''
 end
+
+  resources :articles, :concerns => :paginatable#, :as => "blog" do
+
+  #->Prelang (voting/acts_as_votable)
+  #member do
+  #  get "vote"
+  #end
+#end
 
 
   #Deleted in unifying process

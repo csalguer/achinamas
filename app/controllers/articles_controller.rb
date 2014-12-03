@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:page]
+      @articles = Article.order(:updated_at).page(params[:page]).per(10)
+    else
+      @articles = Article.order(:updated_at).page(0).per(10)
+    end
   end
 
   # GET /articles/1

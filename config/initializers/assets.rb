@@ -34,3 +34,11 @@ Rails.application.config.assets.precompile += %w( pages/page_log_reg_v2.css )
 Rails.application.config.assets.precompile += %w( plugins/countdown/jquery.countdown.js ) 
 Rails.application.config.assets.precompile += %w( plugins/backstretch/jquery.backstretch.min.js )
 
+#Added when trying to get basic blog functionality to work
+Rails.application.config.assets.precompile += %w( pages/blog.css ) 
+
+#Added when trying to get about us page to work
+Rails.application.config.assets.precompile += %w( pages/page_about.css )
+Rails.application.config.assets.precompile += %w( plugins/jquery.parallax.js )
+Rails.application.config.assets.precompile += %w( pages/page_contacts.js )
+Rails.application.config.assets.precompile += %w( plugins/gmap/gmap.js )
