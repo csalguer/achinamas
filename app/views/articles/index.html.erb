@@ -58,6 +58,15 @@
 
     <!--=== Content Part ===-->
     <div class="container content">   
+
+    <%if @user.superadmin? %>
+        <div class="btn-group">
+           <!--  <button type="button" class="btn-u"><%= link_to "Add New", new_article_path %></button> -->
+            <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_article_path,
+            :class => 'btn-u' %>
+        </div>
+    <% end %>
       <div class="row blog-page">    
             <!-- Left Sidebar -->
           <div class="col-md-9 md-margin-bottom-40">
@@ -108,7 +117,7 @@
 
        
                 
-                <!--Pagination-->
+                <!--Pagination--
                 <div class="text-center">
                     <ul class="pagination">
                         <li><a href="#">«</a></li>
@@ -124,6 +133,8 @@
                     </ul>                                                            
                 </div>
                 <!--End Pagination-->
+
+                <%= paginate @articles, :window => 2 %>
             </div>
             <!-- End Left Sidebar -->
 

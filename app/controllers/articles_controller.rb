@@ -8,30 +8,35 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
+    @user = current_user
     if params[:page]
-      @articles = Article.order(:updated_at).page(params[:page]).per(10)
+      @articles = Article.order(:updated_at).page(params[:page]).per(3)
     else
-      @articles = Article.order(:updated_at).page(0).per(10)
+      @articles = Article.order(:updated_at).page(0).per(3)
     end
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @user = current_user
   end
 
   # GET /articles/new
   def new
+    @user = current_user
     @article = Article.new
   end
 
   # GET /articles/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /articles
   # POST /articles.json
   def create
+    @user = current_user
     @article = Article.new(article_params)
     @article.user = current_user
 
@@ -49,6 +54,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @user = current_user
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -73,7 +79,7 @@ class ArticlesController < ApplicationController
 
   #->Prelang (voting/acts_as_votable)
   def vote
-
+    @user = current_user
     direction = params[:direction]
 
     # Make sure we've specified a direction
@@ -98,6 +104,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :user_id)
+      params.require(:article).permit(:title, :content, :user_id, :pic, :name)
     end
 end

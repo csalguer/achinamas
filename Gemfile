@@ -57,6 +57,11 @@ gem 'node'
 #Used for pagination of queries
 gem 'kaminari'
 
+#Used for the including of pictures in articles
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'figaro'
+
 group :development do
   gem 'better_errors'
 end
