@@ -10,9 +10,9 @@ class ArticlesController < ApplicationController
   def index
     @user = current_user
     if params[:page]
-      @articles = Article.order(:updated_at).page(params[:page]).per(3)
+      @articles = Article.order(:updated_at).page(params[:page]).per(1)
     else
-      @articles = Article.order(:updated_at).page(0).per(3)
+      @articles = Article.order(:updated_at).page(0).per(1)
     end
   end
 
