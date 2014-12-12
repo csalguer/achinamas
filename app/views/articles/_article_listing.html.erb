@@ -28,7 +28,7 @@
             <!-- <li><i class="fa fa-tags"></i> Technology, Internet</li> -->
         </ul>
         <p><%= article_listing.content[0...350] + "... " %></p>
-        <p><a class="btn-u btn-u-sm" href="/articles/<%= article_listing.id %>">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+        <p><a class="btn-u btn-u-sm" href="/articles/<%= article_listing.id %>"><%= t('.read_more')%><i class="fa fa-angle-double-right margin-left-5"></i></a></p>
     </div>
 </div>
 <hr class="margin-bottom-40">

@@ -1,39 +1,3 @@
-<!--  <link rel="stylesheet" href="assets/css/pages/blog.css">
-<%- model_class = Article -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => Article %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:content) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.id %></td>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%=l article.created_at, format: :long %></td>
-        <td>
-          <%= link_to article_path(article), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to article_path(article), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_article_path,
             :class => 'btn btn-primary' %> -->
@@ -43,10 +7,10 @@
  <!--=== Breadcrumbs ===-->
  <div class="breadcrumbs">
      <div class="container">
-         <h1 class="pull-left">Blog</h1>
+         <h1 class="pull-left"><%= t('.title')%></h1>
          <ul class="pull-right breadcrumb">
-             <li><%= link_to "Home", root_path %></li>
-             <li class="active">Blog</li>
+             <li><%= link_to t(:home), root_path %></li>
+             <li class="active"><%= t('.title')%></li>
          </ul>
      </div>
  </div><!--/breadcrumbs-->
@@ -72,72 +36,10 @@
       <div class="row blog-page">    
             <!-- Left Sidebar -->
           <div class="col-md-9 md-margin-bottom-40">
-                <!-- Blog Post
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <%= image_tag "article_pics/20.jpg", class: "img-responsive" %>
-                       
-                    </div>    
-                    <div class="col-md-7">
-                        <h2><a href="#">Pellentesque Habitant Morbi Tristique</a></h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
-                    </div>    
-                </div>
-                End Blog Post        
-                
-                <hr class="margin-bottom-40"> -->
+              
 
 
                     <%= render :partial => 'article_listing', :collection => @articles %>
-
-<!--                 Blog Post
-<div class="row blog blog-medium margin-bottom-40">
-    <div class="col-md-5">
-        <div class="blog-img">
-            <div class="responsive-video">
-                <iframe src="//www.youtube.com/embed/ufsrgE0BYf0" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>    
-    <div class="col-md-7">
-        <h2><a href="#">Pellentesque Habitant Morbi Tristique</a></h2>
-        <ul class="list-unstyled list-inline blog-info">
-            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-        </ul>
-        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
-    </div>    
-</div>
-End Blog Post        
-
-<hr class="margin-bottom-40">
- -->
-       
-                
-                <!--Pagination--
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li class="active"><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>                                                            
-                </div>
-                <!--End Pagination-->
 
                 <div class="text-center">
                     <%= paginate @articles, :window => 2 %>
@@ -149,7 +51,7 @@ End Blog Post
           <div class="col-md-3">
                 <!-- Social Icons -->
                 <div class="magazine-sb-social margin-bottom-30">
-                    <div class="headline headline-md"><h2>Social Icons</h2></div>
+                    <div class="headline headline-md"><h2><%= t('.social')%></h2></div>
                     <ul class="social-icons social-icons-color">
                         <li><a class="social_rss" data-original-title="Feed" href="#"></a></li>
                         <li><a class="social_facebook" data-original-title="Facebook" href="#"></a></li>
@@ -172,7 +74,7 @@ End Blog Post
 
                 <!-- Posts -->
                 <div class="posts margin-bottom-40">
-                    <div class="headline headline-md"><h2>Recent Posts</h2></div>
+                    <div class="headline headline-md"><h2><%= t('.recent_posts')%></h2></div>
                     <dl class="dl-horizontal">
                         <dt><%= link_to image_tag("sliders/elastislide/6.jpg"), "#" %></dt>
                         <dd>
@@ -194,7 +96,7 @@ End Blog Post
                 </div><!--/posts-->
                 <!-- End Posts -->
 
-              <!-- Tabs Widget -->
+              <!-- Tabs Widget
               <div class="headline headline-md"><h2>Tabs Widget</h2></div>
                 <div class="tab-v2 margin-bottom-40">
                     <ul class="nav nav-tabs">
@@ -227,10 +129,10 @@ End Blog Post
                             </div> </div>
                     </div>
                 </div>            
-                <!-- End Tabs Widget -->
+                End Tabs Widget -->
 
               <!-- Photo Stream -->
-              <div class="headline headline-md"><h2>Photo Stream</h2></div>
+              <div class="headline headline-md"><h2><%= t('.photo')%></h2></div>
                 <ul class="list-unstyled blog-photos margin-bottom-30">
                     <li><%= link_to image_tag("sliders/elastislide/5.jpg" , class: "hover-effect"), "#" %></li>
                     <li><%= link_to image_tag("sliders/elastislide/6.jpg" , class: "hover-effect"), "#" %></li>

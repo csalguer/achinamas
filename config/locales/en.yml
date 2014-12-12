@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
 
-
+  home: "Home"
   # Strings for _navbar Header partial
   nav_langs: "Languages"
   nav_en: "English"
@@ -68,3 +68,32 @@ en:
   home_angel_descr1: "Learn about our recent efforts and events"
   home_angel_descr2: "that are helping people in our village everyday"
   home_welcome: "Welcome to AChinamas"
+
+  articles:
+      index:
+        title: "Blog"
+        social: "Social Links"
+        recent_posts: "Recent Posts"
+        photo: "Photo Stream"
+      article_listing:
+        read_more: "Read More"
+
+
+  # Strings for Login/Registration
+  signin: "Sign In"
+  signup: "Sign Up"
+  user_or_email: "Username or Email"
+  password: "Password"
+  remember: "Remember Me"
+  login: "Login"
+  forgot: "Forgot your password?"
+  no_confirm: "Didn't receive confirmation instructions?"
+  no_unlock: "Didn't receive unlock instructions?"
+  sign_prov: "Sign in with "
+  no_account: "Don't have an account?"
+  reg_user: "Username"
+  reg_email: "Email"
+  reg_password: "Password"
+  reg_confirm_password: "Confirm Password"
+  reg_terms_cond: "Terms and Conditions"
+  reg_I_read: "I have read "
