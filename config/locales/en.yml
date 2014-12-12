@@ -21,3 +21,50 @@
 
 en:
   hello: "Hello world"
+
+
+  # Strings for _navbar Header partial
+  nav_langs: "Languages"
+  nav_en: "English"
+  nav_es: "Spansih"
+  nav_events: "Events"
+  nav_latest_posts: "Latest Posts"
+  nav_recent_posts: "Recent Updates"
+  nav_discover: "Discover"
+  nav_about: "About Us"
+  nav_mission: "Our Mission"
+  nav_history: "Our History"
+  nav_media: "Media"
+  nav_account_edit: "Edit Account"
+  nav_cart: "Cart"
+  nav_admin: "Admin"
+  nav_logout: "Logout"
+  nav_login: "Login"
+  nav_register: "Sign Up"
+  nav_gallery: "Gallery"
+  nav_videos: "Videos"
+  nav_help: "Help"
+  nav_timeline: "Timeline"
+
+  # Strings for _footer Footer partial
+  foot_useful_links: "Useful Links"
+  foot_contact: "Contact Us"
+  foot_phone: "Phone"
+  foot_fax: "Fax"
+  foot_email: "Email"
+  foot_priv_policy: "Privacy Policy"
+  foot_terms: "Terms of Service"
+
+  # Strings for Homepage
+  home_intro: "Introducing AChinamas"
+  home_intro_1: "We are an organization striving to bring"
+  home_intro_2: "development and clean living to our community"
+  home_comm: "Colorful Community"
+  home_comm_descr: "Come and learn about our way of life"
+  home_landfill: "It all started with a landfill"
+  home_landfill_descr1: "Learn about our history and how"
+  home_landfill_descr2: "one plan to stop a landfill started it all"
+  home_angel: "Our Recent Efforts"
+  home_angel_descr1: "Learn about our recent efforts and events"
+  home_angel_descr2: "that are helping people in our village everyday"
+  home_welcome: "Welcome to AChinamas"

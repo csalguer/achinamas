@@ -40,37 +40,39 @@
 
 
  <% stylesheet_link_tag "pages/blog.css"%>
+ <!--=== Breadcrumbs ===-->
+ <div class="breadcrumbs">
+     <div class="container">
+         <h1 class="pull-left">Blog</h1>
+         <ul class="pull-right breadcrumb">
+             <li><%= link_to "Home", root_path %></li>
+             <li class="active">Blog</li>
+         </ul>
+     </div>
+ </div><!--/breadcrumbs-->
+ <!--=== End Breadcrumbs ===-->
  <div class="wrapper">
     
 
-    <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
-        <div class="container">
-            <h1 class="pull-left">Blog Medium</h1>
-            <ul class="pull-right breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Features</a></li>
-                <li class="active">Blog Medium</li>
-            </ul>
-        </div>
-    </div><!--/breadcrumbs-->
-    <!--=== End Breadcrumbs ===-->
+    
 
     <!--=== Content Part ===-->
     <div class="container content">   
 
-    <%if @user.superadmin? %>
-        <div class="btn-group">
-           <!--  <button type="button" class="btn-u"><%= link_to "Add New", new_article_path %></button> -->
-            <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_article_path,
-            :class => 'btn-u' %>
-        </div>
+    <% if @user %>
+        <%if @user.superadmin? %>
+            <div class="btn-group">
+               <!--  <button type="button" class="btn-u"><%= link_to "Add New", new_article_path %></button> -->
+                <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_article_path,
+                :class => 'btn-u' %>
+            </div>
+        <% end %>
     <% end %>
       <div class="row blog-page">    
             <!-- Left Sidebar -->
           <div class="col-md-9 md-margin-bottom-40">
-                <!--Blog Post-->
+                <!-- Blog Post
                 <div class="row blog blog-medium margin-bottom-40">
                     <div class="col-md-5">
                         <%= image_tag "article_pics/20.jpg", class: "img-responsive" %>
@@ -87,34 +89,37 @@
                         <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
                     </div>    
                 </div>
-                <!--End Blog Post-->        
+                End Blog Post        
+                
+                <hr class="margin-bottom-40"> -->
 
-                <hr class="margin-bottom-40">
 
-                <!--Blog Post-->
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <div class="blog-img">
-                            <div class="responsive-video">
-                                <iframe src="//www.youtube.com/embed/ufsrgE0BYf0" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="col-md-7">
-                        <h2><a href="#">Pellentesque Habitant Morbi Tristique</a></h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
-                    </div>    
-                </div>
-                <!--End Blog Post-->        
+                    <%= render :partial => 'article_listing', :collection => @articles %>
 
-                <hr class="margin-bottom-40">
+<!--                 Blog Post
+<div class="row blog blog-medium margin-bottom-40">
+    <div class="col-md-5">
+        <div class="blog-img">
+            <div class="responsive-video">
+                <iframe src="//www.youtube.com/embed/ufsrgE0BYf0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-7">
+        <h2><a href="#">Pellentesque Habitant Morbi Tristique</a></h2>
+        <ul class="list-unstyled list-inline blog-info">
+            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
+            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
+            <li><i class="fa fa-tags"></i> Technology, Internet</li>
+        </ul>
+        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+        <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+    </div>    
+</div>
+End Blog Post        
 
+<hr class="margin-bottom-40">
+ -->
        
                 
                 <!--Pagination--
@@ -134,7 +139,9 @@
                 </div>
                 <!--End Pagination-->
 
-                <%= paginate @articles, :window => 2 %>
+                <div class="text-center">
+                    <%= paginate @articles, :window => 2 %>
+                </div>
             </div>
             <!-- End Left Sidebar -->
 

@@ -1,26 +1,127 @@
-<%- model_class = Article -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => Article %></h1>
-</div>
+<% stylesheet_link_tag 'pages/blog.css' %>
 
-<div class="fieldset">
-  <dl>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
-      <dd><pre class="prettyprint"><%= @article.title %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:content) %></dt>
-      <dd><pre class="prettyprint"><%= @article.content %></pre></dd>
-  </dl>
-</div>
+<div class="wrapper">
+<!--=== Content Part ===-->
+  <div class="container content blog-page blog-item">   
+    <!--Blog Post-->        
+    <div class="blog margin-bottom-40">
+      <div class="blog-img">
+          <%= image_tag @article.pic.url(:blog), class: 'img-responsive' %>
+      </div>
+      <h2><%= link_to @article.title, '#' %></h2>
+      <div class="blog-post-tags">
+        <ul class="list-unstyled list-inline blog-info">
+          <li><i class="fa fa-calendar"></i><%= " " + @article.created_at.strftime("%d %b. %Y") %></li>
+          <li><i class="fa fa-pencil"></i> AUTHOR</li>
+          <!-- <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
+          <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li> -->
+        </ul>                    
+      </div>
+        <%= @article.content %> 
+    </div>
+    <!--End Blog Post-->        
 
-<div class="form-group">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              articles_path, :class => 'btn btn-default'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_article_path(@article), :class => 'btn btn-default' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              article_path(@article),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
+    <hr>
 
+     <!--  Recent Comments
+     <div class="media">
+         <h3>Comments</h3>
+         <a class="pull-left" href="#">
+             <img class="media-object" src="assets/img/sliders/elastislide/2.jpg" alt="" />
+         </a>
+         <div class="media-body">
+             <h4 class="media-heading">Media heading <span>5 hours ago / <a href="#">Reply</a></span></h4>
+             <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
+     
+             <hr>
+     
+             <div class="media">
+                 <a class="pull-left" href="#">
+                     <img class="media-object" src="assets/img/sliders/elastislide/5.jpg" alt="" />
+                 </a>
+                 <div class="media-body">
+                     <h4 class="media-heading">Media heading <span>17 hours ago / <a href="#">Reply</a></span></h4>
+                     <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
+                 </div>
+             </div>
+     
+             <hr>
+     
+             <div class="media">
+                 <a class="pull-left" href="#">
+                     <img class="media-object" src="assets/img/sliders/elastislide/11.jpg" alt="" />
+                 </a>
+                 <div class="media-body">
+                     <h4 class="media-heading">Media heading <span>2 days ago / <a href="#">Reply</a></span></h4>
+                     <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
+                 </div>
+             </div>
+         </div>
+     </div>/media
+     
+     <div class="media">
+         <a class="pull-left" href="#">
+             <img class="media-object" src="assets/img/sliders/elastislide/9.jpg" alt="" />
+         </a>
+         <div class="media-body">
+             <h4 class="media-heading">Media heading <span>July 5,2013 / <a href="#">Reply</a></span></h4>
+             <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
+         </div>
+     </div>/media
+     End Recent Comments
+     
+     <hr>
+     
+     Comment Form
+     <div class="post-comment">
+         <h3>Leave a Comment</h3>
+         <form>
+             <label>Name</label>
+             <div class="row margin-bottom-20">
+                 <div class="col-md-7 col-md-offset-0">
+                     <input type="text" class="form-control">
+                 </div>                
+             </div>
+             
+             <label>Email <span class="color-red">*</span></label>
+             <div class="row margin-bottom-20">
+                 <div class="col-md-7 col-md-offset-0">
+                     <input type="text" class="form-control">
+                 </div>                
+             </div>
+             
+             <label>Message</label>
+             <div class="row margin-bottom-20">
+                 <div class="col-md-11 col-md-offset-0">
+                     <textarea class="form-control" rows="8"></textarea>
+                 </div>                
+             </div>
+             
+             <p><button class="btn-u" type="submit">Send Message</button></p>
+         </form>
+     </div>
+     End Comment Form
+         </div>/container   
+=== End Content Part === -->
+
+
+
+
+
+  <div class="form-group">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                articles_path, :class => 'btn btn-default'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_article_path(@article), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                article_path(@article),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+  </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();      
+    });
+</script>

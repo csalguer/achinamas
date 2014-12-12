@@ -14,7 +14,7 @@
                         <!-- Latest -->
                         <div class="col-md-3 md-margin-bottom-40">
                             <div class="posts">
-                                <div class="headline"><h2>Latest Posts</h2></div>
+                                <div class="headline"><h2><%= t(:nav_latest_posts) %></h2></div>
                                 <ul class="list-unstyled latest-list">
                                     <li>
                                         <a href="#">Incredible content</a>
@@ -35,26 +35,24 @@
                         
                         <!-- Link List -->
                         <div class="col-md-3 md-margin-bottom-40">
-                            <div class="headline"><h2>Useful Links</h2></div>
+                            <div class="headline"><h2><%= t(:foot_useful_links)%></h2></div>
                             <ul class="list-unstyled link-list">
-                                <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+                                <li><%= link_to t(:nav_about), '/about' %><i class="fa fa-angle-right"></i></li>
+                                <li><%= link_to t(:nav_help), '#' %><i class="fa fa-angle-right"></i></li>
+                                <li><%= link_to t(:nav_timeline), '#' %><i class="fa fa-angle-right"></i></li>
                             </ul>
                         </div>
                         <!-- End Link List -->                    
 
                         <!-- Address -->
                         <div class="col-md-3 map-img md-margin-bottom-40">
-                            <div class="headline"><h2>Contact Us</h2></div>                         
+                            <div class="headline"><h2><%= t(:foot_contact) %></h2></div>                         
                             <address class="md-margin-bottom-40">
                                 25, Lorem Lis Street, Orange <br />
                                 California, US <br />
-                                Phone: 800 123 3456 <br />
-                                Fax: 800 123 3456 <br />
-                                Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                                <%= t(:foot_phone)%>: 800 123 3456 <br />
+                                <%= t(:foot_fax)%>: 800 123 3456 <br />
+                                <%= t(:foot_email)%>: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
                             </address>
                         </div>
                         <!-- End Address -->
@@ -68,7 +66,7 @@
                         <div class="col-md-6">                     
                             <p>
                                 2014 &copy; All Rights Reserved.
-                               <%= link_to "Privacy Policy", "/privacy"%> | <%= link_to "Terms of Service", "/terms" %>
+                               <%= link_to t(:foot_priv_policy), "/privacy"%> | <%= link_to t(:foot_terms), "/terms" %>
                             </p>
                         </div>
 

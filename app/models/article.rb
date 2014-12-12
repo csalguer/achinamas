@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   has_attached_file :pic, styles: {
     thumb: '60x60>',
     blog: '1120x420#',
-    medium: '350x2250>'
+    medium: '350x225>'
   }
 
   # Validate the attached image is image/jpg, image/png, etc

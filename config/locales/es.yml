@@ -1,0 +1,70 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  hello: "Hola Mundo!"
+
+
+  # Strings for _navbar Header partial
+  nav_langs: "Idiomas"
+  nav_en: "Inglés"
+  nav_es: "Español"
+  nav_events: "Eventos"
+  nav_latest_posts: "Posteados Más Recientes"
+  nav_recent_posts: "Avisos y Novedades"
+  nav_discover: "Descubre"
+  nav_about: "Acerca de Nosotros"
+  nav_mission: "Nuestra Misión"
+  nav_history: "Nuestra Historia"
+  nav_media: "Imágenes"
+  nav_account_edit: "Editar Cuenta"
+  nav_cart: "Carreta"
+  nav_admin: "Administrador"
+  nav_logout: "Cierre Sesión"
+  nav_login: "Ingresar"
+  nav_register: "Registrar"
+  nav_gallery: "Fotos"
+  nav_videos: "Videos"
+  nav_help: "Ayuda"
+  nav_timeline: "Linea de the Eventos"
+
+  # Strings for _footer Footer partial
+  foot_useful_links: "Enlaces Útiles"
+  foot_contact: "Contáctenos"
+  foot_phone: "Teléfono"
+  foot_fax: "Fax"
+  foot_email: "Correo Electronico"
+  foot_priv_policy: "Poliza de Privacidad"
+  foot_terms: "Terminos de Servicio"
+
+  # Strings for Homepage
+  home_intro: "Introduciendo AChinamas"
+  home_intro_descr1: "Somos una organización que lucha para mantener una vida limpia"
+  home_intro_descr2: "y desarrollar nuestra comunidad"
+  home_comm: "Comunidad Colorido"
+  home_comm_descr: "Venga y aprenda sobre nuestra forma de vida"
+  home_landfill: "Todo comenzó con un relleno sanitario"
+  home_landfill_descr1: "Aprenda nuestra historia y cómo"
+  home_landfill_descr2: "un plan a detener un basurero cambió todo una comunidad"
+  home_angel: "Nuestros Esfuerzos Recientes"
+  home_angel_descr1: "Aprenda sobre nuestros eventos y esfuerzos recientes "
+  home_angel_descr2: "que están ayudando a la gente de nuestro pueblo cada día"
+  home_welcome: "Bienvenidos AChinamas"
