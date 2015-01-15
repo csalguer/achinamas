@@ -75,7 +75,7 @@
                               <%= link_to t(:nav_events), "/articles", class: "dropdown-toggle",:data => { :toggle => "dropdown"}%>
 
                               <ul class="dropdown-menu">
-                                  <li><%= link_to t(:nav_latest_posts), "/articles" %></li>                                
+                                  <li><%= link_to t(:nav_latest_posts), articles_path %></li>                                
                                   <li><%= link_to t(:nav_recent_posts), "#" %></li>
                               </ul>
                           </li>
@@ -88,15 +88,15 @@
                               </a>
                               <ul class="dropdown-menu">
                                   <!-- About Us -->
-                                  <li><%= link_to t(:nav_about), "/about" %></li>
+                                  <li><%= link_to t(:nav_about), controller: "/landings", action: "about" %></li>
                                   <!-- End About Us -->
 
                                   <!-- Our Mission -->
-                                  <li><%= link_to t(:nav_mission), "/mission" %></li>
+                                  <li><%= link_to t(:nav_mission), controller: "/landings", action: "mission" %></li>
                                   <!-- End Our Mission -->
 
                                   <!-- Our History -->
-                                  <li><%= link_to t(:nav_history), "/history" %></li>
+                                  <li><%= link_to t(:nav_history), controller: "/landings", action: "history" %></li>
                                   <!-- End Our History -->
 
                               </ul>

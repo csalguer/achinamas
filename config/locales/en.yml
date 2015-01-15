@@ -54,6 +54,7 @@ en:
   foot_email: "Email"
   foot_priv_policy: "Privacy Policy"
   foot_terms: "Terms of Service"
+  foot_rights: "All Rights Reserved."
 
   # Strings for Homepage
   home_intro: "Introducing AChinamas"
@@ -75,8 +76,16 @@ en:
         social: "Social Links"
         recent_posts: "Recent Posts"
         photo: "Photo Stream"
+        new: "Create Article"
       article_listing:
         read_more: "Read More"
+      new:
+        page_title: "New Article"
+      form:
+        title: "Title"
+        content: "Content"
+        pic: "Picture"
+        submit: "Submit"
 
 
   # Strings for Login/Registration
@@ -96,4 +105,4 @@ en:
   reg_password: "Password"
   reg_confirm_password: "Confirm Password"
   reg_terms_cond: "Terms and Conditions"
-  reg_I_read: "I have read "
+  reg_I_read: "I have read the "

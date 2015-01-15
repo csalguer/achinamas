@@ -1,19 +1,19 @@
 <%= form_for @article, :html => { :class => 'form-horizontal form-model' } do |f| %>
   <div class="form-group">
-    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <%= f.label t('.title'), :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :title, :class => 'text-field form-control' %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :content, :class => 'control-label col-md-2' %>
+    <%= f.label t('.content'), :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_area :content, :class => 'text-field form-control' %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :Picture, :class => 'control-label col-md-2' %>
+    <%= f.label t('.pic'), :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.file_field :pic %>
     </div>
@@ -21,7 +21,7 @@
 
   <div class="form-group">
     <div class='col-md-offset-2 col-md-10'>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit t('.submit'), :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   articles_path, :class => 'btn btn-default' %>
     </div>

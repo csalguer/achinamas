@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get    "about"    =>  "landings#about"
   get    "privacy"  =>  "landings#privacy"
   get    "terms"    =>  "landings#terms"
+  get    "history"  =>  "landings#history"
+  get    "mission"  =>  "landings#mission"
 
 
   resources :store_items

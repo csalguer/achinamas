@@ -54,6 +54,7 @@ es:
   foot_email: "Correo Electronico"
   foot_priv_policy: "Poliza de Privacidad"
   foot_terms: "Terminos de Servicio"
+  foot_rights: "Derechos Reservados."
 
   # Strings for Homepage
   home_intro: "Introduciendo AChinamas"
@@ -75,17 +76,32 @@ es:
         social: "Enlaces Sociales"
         recent_posts: "Posteados Recientes"
         photo: "Galería de Fotos"
+        new: "Crear Articulo"
       article_listing:
         read_more: "Lea Más"
+      new:
+        page_title: "Nuevo Articulo"
+      form:
+        title: "Título"
+        content: "Contenido"
+        pic: "Foto"
+        submit: "Crear"
 
   # Strings for Login/Registration
   signin: "Iniciar Sesión"
+  signup: "Registrate"
   user_or_email: "Usuario o Correo"
   password: "Contraseña"
   remember: "Recuérdame"
   login: "Ingresar"
-  signup: "Registrate"
   forgot: "¿Olvidaste tu contraseña?"
   no_confirm: "¿No has recibido instrucciones de confirmación?"
   no_unlock: "¿No has recibido instrucciones de desbloqueo?"
   sign_prov: "Ingrese con "
+  no_account: "¿No tienes una cuenta?"
+  reg_user: "Usuario"
+  reg_email: "Correo Electronico"
+  reg_password: "Contraseña"
+  reg_confirm_password: "Confirme Contraseña"
+  reg_terms_cond: "Terminos y Condiciones"
+  reg_I_read: "He leido los "

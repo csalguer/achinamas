@@ -1,18 +1,30 @@
 class LandingsController < ApplicationController
+  before_action :get_user
+
   def index
-  	@user = current_user
+
   end
 
   def about
-  	@user = current_user
-  	
+
   end
 
   def privacy
-  	@user = current_user
   end
 
   def terms
-  	@user = current_user
   end
+
+  def mission
+
+  end
+
+  def history
+
+  end
+
+  private
+    def get_user
+      @user = current_user
+    end
 end
