@@ -62,6 +62,9 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
 
+#Used as markup language parser for the articles
+gem 'redcarpet'
+
 group :development do
   gem 'better_errors'
 end

@@ -20,6 +20,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @user = current_user
+    # Initializes a Markdown parser
+    @renderer = Redcarpet::Render::HTML.new(filter_html: true, hard_wrap: true)
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
   end
 
   # GET /articles/new
