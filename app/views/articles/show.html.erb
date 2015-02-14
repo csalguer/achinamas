@@ -17,7 +17,7 @@
           <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li> -->
         </ul>                    
       </div>
-        <%= @markdown.render(@article.content).html_safe %> 
+        <%= markdown(@article.content) %> 
     </div>
     <!--End Blog Post-->        
 
