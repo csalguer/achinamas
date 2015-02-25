@@ -1,20 +1,3 @@
-<!-- <div class="row blog blog-medium margin-bottom-40">
-    <div class="col-md-5">
-        <%= image_tag "article_pics/20.jpg", class: "img-responsive" %>
-       
-    </div>    
-    <div class="col-md-7">
-        <h2><a href="#">Pellentesque Habitant Morbi Tristique</a></h2>
-        <ul class="list-unstyled list-inline blog-info">
-            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-        </ul>
-        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p><a class="btn-u btn-u-sm" href="blog_item.html">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
-    </div>    
-</div>
- -->
 
 <div class="row blog blog-medium margin-bottom-40">
     <div class="col-md-5">
@@ -27,7 +10,8 @@
             <!-- <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
             <!-- <li><i class="fa fa-tags"></i> Technology, Internet</li> -->
         </ul>
-        <p><%= article_listing.content[0...350] + "... " %></p>
+        <!-- <p><%= article_listing.content[0...350] + "... " %></p> -->
+        <div><%= creole_article_preview(article_listing.content[0...350] + "...") %></div>
         <p><a class="btn-u btn-u-sm" href="/articles/<%= article_listing.id %>"><%= t('.read_more')%><i class="fa fa-angle-double-right margin-left-5"></i></a></p>
     </div>
 </div>

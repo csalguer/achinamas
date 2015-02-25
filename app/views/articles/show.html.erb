@@ -17,7 +17,9 @@
           <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li> -->
         </ul>                    
       </div>
-        <%= markdown(@article.content) %> 
+        <div>
+            <%= creole(@article.content) %> 
+        </div>
     </div>
     <!--End Blog Post-->        
 

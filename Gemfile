@@ -64,6 +64,7 @@ gem 'figaro'
 
 #Used as markup language parser for the articles
 gem 'redcarpet'
+gem 'creole'
 
 group :development do
   gem 'better_errors'

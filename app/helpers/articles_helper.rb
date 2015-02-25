@@ -1,3 +1,6 @@
+# require 'rubygems'
+# require 'nokogiri'
+
 module ArticlesHelper
 	def markdown(text)
 	    options = {
@@ -20,4 +23,16 @@ module ArticlesHelper
 
 	    markdown.render(text).html_safe
 	end
+
+	def creole(text)
+		html = Creole.creolize(text)
+		html.html_safe
+	end
+
+	def creole_article_preview(text)
+		html = Creole.creolize(text)
+		# Nokogiri::HTML(html).text
+		html.gsub(/<\/?[^>]*>/, '').gsub(/\n\n+/, "\n").gsub(/^\n|\n$/, '')
+	end
+
 end
