@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get    "history"  =>  "landings#history"
   get    "mission"  =>  "landings#mission"
 
-
+  resources :users, only: [:show, :edit, :update]
+  
   resources :store_items
 
   resources :orders

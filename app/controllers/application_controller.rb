@@ -15,6 +15,14 @@ class ApplicationController < ActionController::Base
     logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { locale: I18n.locale }
   end
+  # The suggested implementations of the internationalize of the app
+  # def set_locale
+  #       I18n.locale = params[:locale]
+  #     end
+
+  #     def self.default_url_options(options={})
+  #       options.merge({ :locale => I18n.locale })
+  #     end
 
   protected
 

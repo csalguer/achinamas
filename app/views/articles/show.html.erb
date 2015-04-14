@@ -8,7 +8,7 @@
       <div class="blog-img">
           <%= image_tag @article.pic.url(:blog), class: 'img-responsive' %>
       </div>
-      <h2><%= link_to @article.title, '#' %></h2>
+      <h2><%= link_to article_title_lang_display(@article.title), '#' %></h2>
       <div class="blog-post-tags">
         <ul class="list-unstyled list-inline blog-info">
           <li><i class="fa fa-calendar"></i><%= " " + @article.created_at.strftime("%d %b. %Y") %></li>
@@ -18,7 +18,7 @@
         </ul>                    
       </div>
         <div>
-            <%= creole(@article.content) %> 
+            <%= article_lang_display(@article.content) %> 
         </div>
     </div>
     <!--End Blog Post-->        

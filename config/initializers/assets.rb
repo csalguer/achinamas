@@ -42,3 +42,22 @@ Rails.application.config.assets.precompile += %w( pages/page_about.css )
 Rails.application.config.assets.precompile += %w( plugins/jquery.parallax.js )
 Rails.application.config.assets.precompile += %w( pages/page_contacts.js )
 Rails.application.config.assets.precompile += %w( plugins/gmap/gmap.js )
+
+
+#Added when trying to get account/profile to work
+Rails.application.config.assets.precompile += %w( plugins/custom-sky-forms.css )
+Rails.application.config.assets.precompile += %w( plugins/jquery.mousewheel.js )
+Rails.application.config.assets.precompile += %w( plugins/perfect-scrollbar.js )
+Rails.application.config.assets.precompile += %w( plugins/perfect-scrollbar.css )
+Rails.application.config.assets.precompile += %w( plugins/jquery.validate.min.js )
+Rails.application.config.assets.precompile += %w( plugins/jquery.maskedinput.min.js )
+Rails.application.config.assets.precompile += %w( plugins/forms/checkout.js )
+Rails.application.config.assets.precompile += %w( plugins/forms/reg.js )
+Rails.application.config.assets.precompile += %w( pages/profile.css )
+
+
+
+
+
+
+
