@@ -21,9 +21,23 @@
                         <a><%= t(:nav_langs) %></a>
                         <ul class="languages">
                             <li class="active">
-                                <a href="#"><%= t(:nav_en) %> <i class="fa fa-check"></i></a> 
+                              <a href=<%= url_for(:locale => 'en') %>  ><%= t(:nav_en) %> 
+                                <% if (I18n.locale == :en) %>
+                                  <i class="fa fa-check"></i>
+                                <% end %>
+                              </a>  
                             </li>
-                            <li><a href="#"><%= t(:nav_es) %></a></li>
+                            <li>
+                             <a href=<%= url_for(:locale => 'es') %>  ><%= t(:nav_es) %> 
+                               <% if (I18n.locale == :es) %>
+                                <i class="fa fa-check"></i>
+                               <% end %>
+                             </a> 
+                              <!-- <%= link_to t(:nav_en), url_for( :locale => 'en' ) %>
+                              <% if (I18n.locale == :en)%>
+                                <i class="fa fa-check"></i>
+                              <% end %> -->
+                            </li>
                         </ul>
                     </li>
                       <li class="topbar-devider"></li>   
